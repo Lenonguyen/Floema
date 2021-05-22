@@ -7,11 +7,19 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('pages/home')
 })
 
-app.get('/', (req, res) => {
-  res.render('index')
+app.get('/about', (req, res) => {
+  res.render('pages/about')
+})
+
+app.get('/detail/:id', (req, res) => {
+  res.render('pages/detail')
+})
+
+app.get('/collections', (req, res) => {
+  res.render('pages/collections')
 })
 
 app.listen(port, () => {
